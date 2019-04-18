@@ -1,0 +1,20 @@
+
+$grey: LightGrey;
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+  font-style: large;
+  max-width: 400px;
+
+  li {
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer;
+    border: $grey 3px solid;
+
+    &:hover{
+      background-color: $grey;
+    }
+  }
+}
