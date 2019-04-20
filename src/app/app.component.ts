@@ -9,6 +9,7 @@ import {PlantService} from "./plant.service";
 })
 export class AppComponent implements OnInit{
   plants: Plant[];
+  testPlant: Plant = new Plant('тестовая лаванда', 'test', 0);
   //temp: Plant = new Plant('Лаванда', 'Серебряная листва', 99.9);
 
   // save(): void{
@@ -24,15 +25,18 @@ export class AppComponent implements OnInit{
   // }
 
 
-  constructor(private ps: PlantService){}
-    name: string = 'TestName';
+  constructor(private ps: PlantService){
+
+  }
+
 
    ngOnInit(){
     this.plants = this.ps.getPlants()
   }
+ /*
     //insert HTML code from component
     language: string = '<strong>TypeScript</strong>';
 
-
+ */
 }
 

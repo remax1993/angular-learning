@@ -23,13 +23,16 @@
 
 <app-plant-detail #detail></app-plant-detail>
 
+<!--
 
 <div [ngSwitch]="plants.length">
     <p *ngSwitchCase="0"> нету растений</p>
     <p *ngSwitchCase="1"> одно растение</p>
     <p *ngSwitchDefault>Много растений</p>
 </div>
+-->
 
+<!--
 
 <h5>testing</h5>
 <ng-template #plantkindlist>
@@ -42,7 +45,7 @@
 <ng-container *ngTemplateOutlet="plantkindlist"></ng-container>
 
 
-<!--use nested template-->
+&lt;!&ndash;use nested template&ndash;&gt;
 <ng-template #plantdetail let-name="name">
     <p>{{name}}</p>
 </ng-template>
@@ -50,17 +53,45 @@
 <div *ngFor="let plant of plants">
     <ng-container *ngTemplateOutlet="plantdetail; context: plant"></ng-container>
 </div>
-<!-- end use nested template-->
+&lt;!&ndash; end use nested template&ndash;&gt;
 
 
-<!-- *ngIf then else-->
+&lt;!&ndash; *ngIf then else&ndash;&gt;
 <h3>ngIf then else</h3>
 <p *ngIf="plants.length == 0; else plantlist">растений нет</p>
 <ng-template #plantlist>
     <span *ngFor="let plant of plants">{{plant.name}} </span>
 </ng-template>
 
-<!-- else *ngIf then else-->
+&lt;!&ndash; else *ngIf then else&ndash;&gt;
 
-<!--insert HTML code from component-->
+&lt;!&ndash;insert HTML code from component&ndash;&gt;
 <p [innerHTML]="language"></p>
+-->
+
+
+<!--input form-->
+<input type="radio" [(ngModel)]="kind" name="kind" value="garden">садовое растение
+<input type="radio" [(ngModel)]="kind" name="kind" value="room">комное растение
+
+<select size="1" [(ngModel)]="kind" name="kind" >
+    <option value="garden">садовое растение</option>
+    <option value="room">комнатное растение</option>
+</select>
+<!--end input form-->
+
+
+<!--receiving data in the template code-->
+<h3>v.1</h3>
+<form #plantform="ngForm">
+    <p>Введите название: <input [(ngModel)]="testPlant.name" name="name"></p>
+</form>
+<p>проверьте введенное название: {{plantform.value.name}}</p>
+
+
+<h3>v.2</h3>
+<form>
+    <p>Введите название: <input [(ngModel)]="testPlant.name" name="name" #plantname="ngModel"></p>
+</form>
+<p>проверьте введенное название: {{plantname.value}}</p>
+<!--end receiving data in the template code-->
