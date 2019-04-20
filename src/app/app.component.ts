@@ -30,7 +30,8 @@ export class AppComponent implements OnInit{
    ngOnInit(){
     this.plants = this.ps.getPlants()
   }
-
+    //insert HTML code from component
+    language: string = '<strong>TypeScript</strong>';
 
 
 }
