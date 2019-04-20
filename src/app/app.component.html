@@ -44,7 +44,7 @@
 
 <!--use nested template-->
 <ng-template #plantdetail let-name="name">
-    <h3>{{name}}</h3>
+    <p>{{name}}</p>
 </ng-template>
 
 <div *ngFor="let plant of plants">
@@ -52,3 +52,12 @@
 </div>
 <!-- end use nested template-->
 
+
+<!-- *ngIf then else-->
+<h3>ngIf then else</h3>
+<p *ngIf="plants.length == 0; else plantlist">растений нет</p>
+<ng-template #plantlist>
+    <span *ngFor="let plant of plants">{{plant.name}} </span>
+</ng-template>
+
+<!-- else *ngIf then else-->
