@@ -23,9 +23,11 @@ export class AppComponent implements OnInit{
   //   this.temp.price = this.plant.price;
   // }
 
-  constructor(private ps: PlantService){}
 
-  ngOnInit(){
+  constructor(private ps: PlantService){}
+    name: string = 'TestName';
+
+   ngOnInit(){
     this.plants = this.ps.getPlants()
   }
 

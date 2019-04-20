@@ -1,5 +1,7 @@
 <div *ngIf="plant">
   <h2>{{plant.name}}</h2>
   <p>{{plant.description}}</p>
-  <p>{{plant.price}}</p>
+  <p>{{plant.price | currency:"EUR":true}}</p>
 </div>
+
+
