@@ -1,9 +1,10 @@
 
 <!--use of event object-->
 <div class="tracker"
-    (mousemove)="showCoords($event)"></div>
-<p>X: {{x}}</p>
-<p>Y: {{y}}</p>
+    (mousemove)="x.textContent = $event.offsetX;
+                 y.textContent = $event.offsetY"></div>
+<p>X: <span #x></span></p>
+<p>Y: <span #y></span></p>
 
 <!--end use of event object-->
 
