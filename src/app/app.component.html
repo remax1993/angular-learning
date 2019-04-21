@@ -1,3 +1,42 @@
+<!--software style indication-->
+<p [class]="cls">Садовое растение</p>
+<p [class.highlighted]="flag" (click)="flag=!flag">Садовое растение</p>
+
+<hr>
+<p>
+    <input type="button" value="полужирный"
+    (click)="par.bold = !par.bold">
+    <input type="button" value="курсив"
+    (click)="par.italic = !par.italic">
+</p>
+<p [ngClass]="par">Пример текста</p>
+
+<hr>
+<p [ngClass]="cls2">Садовое растение</p>
+<!--end software style indication-->
+
+<hr>
+
+<p>Цвет в формате RGB: <input [(ngModel)]="color"></p>
+<p [style.background-color]="color">{{color}}</p>
+
+<hr>
+
+<p>Размер шрифта, px.: <input [(ngModel)]="fontSize"></p>
+<p [style.font-size.px]="fontSize">{{fontSize}}</p>
+
+<hr>
+
+<p>Директива описания стиля [ngStyle]  имеет смысл применять, если нужно задать для элемента сложный стиль</p>
+<p>Цвет в формате RGB:
+    <input [(ngModel)]="par['background-color']">
+</p>
+<p>Размер шритфа, px.:
+    <input [(ngModel)]="par['font-size.px']">
+</p>
+<p [ngStyle]="par">{{par['background-color']}}
+    {{par['font-size.px']}}
+</p>
 
 <!--use of event object-->
 <div class="tracker"
@@ -7,7 +46,7 @@
 <p>Y: <span #y></span></p>
 
 <!--end use of event object-->
-
+<hr>
 
 <!--
 

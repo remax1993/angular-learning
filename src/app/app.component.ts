@@ -8,6 +8,24 @@ import {PlantService} from "./plant.service";
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit{
+    cls: string = 'highlighted special';
+    flag: boolean = false;
+
+    par: Object = {
+        bold: false,
+        italic: false
+    };
+
+    cls2: Object = {'first second third': true};
+    //cls2: string = 'first second third';
+    //cls2: string[] = ['four', 'fifth'];
+
+    color: string = '#ffffff';
+    fontSize: number = 12;
+
+    par: Object = {'background-color': '#ffffff',
+                    'font-size.px': '12'}
+
 /*
 
 //use of event object
