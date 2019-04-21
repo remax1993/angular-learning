@@ -8,6 +8,16 @@ import {PlantService} from "./plant.service";
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit{
+
+//use of event object
+    x: number = 0;
+    y: number = 0;
+
+    showCoords(evt: MouseEvent): void{
+        this.x = evt.offsetX;
+        this.y = evt.offsetY;
+    }
+//end use of event object
   plants: Plant[];
   testPlant: Plant = new Plant('тестовая лаванда', 'test', 0);
   //temp: Plant = new Plant('Лаванда', 'Серебряная листва', 99.9);
