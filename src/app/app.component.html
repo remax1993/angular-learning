@@ -1,3 +1,9 @@
+<!--event creation at components-->
+
+<app-some (someevent)="doSomething($event)"></app-some>
+
+<!--end event creation at components-->
+
 <!--software style indication-->
 <p [class]="cls">Садовое растение</p>
 <p [class.highlighted]="flag" (click)="flag=!flag">Садовое растение</p>

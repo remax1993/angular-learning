@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import {PlantService} from "./plant.service";
 import { PlantDetailComponent } from './plant-detail.component';
+import { SomeComponent } from './some/some.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlantDetailComponent
+    PlantDetailComponent,
+    SomeComponent
   ],
   imports: [
     BrowserModule,

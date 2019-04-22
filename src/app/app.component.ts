@@ -8,6 +8,7 @@ import {PlantService} from "./plant.service";
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit{
+
     cls: string = 'highlighted special';
     flag: boolean = false;
 
