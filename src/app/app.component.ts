@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Plant} from './plant';
 import {PlantService} from "./plant.service";
+import {PlantDetailComponent} from "./plant-detail.component";
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,20 @@ import {PlantService} from "./plant.service";
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit{
+    //access to templates elements
+
+    @ViewChild(PlantDetailComponent) detail: PlantDetailComponent;
+    constructor(private ps: PlantService){
+
+    }
+    ngOnInit(){
+        this.plants = this.ps.getPlants()
+    }
+    showPlant(plant: Plant){
+        this.detail.plant = plant;
+    }
+
+    //end access to templates elements
 
     cls: string = 'highlighted special';
     flag: boolean = false;
@@ -57,14 +72,10 @@ export class AppComponent implements OnInit{
   // }
 
 
-  constructor(private ps: PlantService){
-
-  }
 
 
-   ngOnInit(){
-    this.plants = this.ps.getPlants()
-  }
+
+
  /*
     //insert HTML code from component
     language: string = '<strong>TypeScript</strong>';

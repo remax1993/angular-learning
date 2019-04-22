@@ -1,8 +1,26 @@
+<!--access to templates elements-->
+
+<h1>Садовые растения</h1>
+<ul>
+    <li *ngFor="let plant of plants"
+        (click)="showPlant(plant)">{{plant.name}}</li>
+</ul>
+<app-plant-detail></app-plant-detail>
+
+<!--end access to templates elements-->
+
+<hr>
+
 <!--event creation at components-->
 
-<app-some (someevent)="doSomething($event)"></app-some>
+<app-some (someevent)="doSomething($event)">
+    <h3>Список новых растений</h3>
+
+</app-some>
 
 <!--end event creation at components-->
+
+<hr>
 
 <!--software style indication-->
 <p [class]="cls">Садовое растение</p>
