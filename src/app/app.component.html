@@ -1,3 +1,18 @@
+
+<!--access to multiple template elements-->
+
+<ul>
+    <li *ngFor="let plant of plants"
+    (click)="showPlant(plant)" #pl>{{plant.name}}</li>
+
+    <p class="bold">Всего {{lcount}} растений</p>
+
+</ul>
+
+<!--end access to multiple template elements-->
+
+<hr>
+
 <!--access to templates elements-->
 
 <h1>Садовые растения</h1>

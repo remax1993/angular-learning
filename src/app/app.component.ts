@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewChecked, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {Plant} from './plant';
 import {PlantService} from "./plant.service";
 import {PlantDetailComponent} from "./plant-detail.component";
@@ -8,7 +8,18 @@ import {PlantDetailComponent} from "./plant-detail.component";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, AfterViewChecked{
+    //access to multiple template elements
+
+    @ViewChildren('pl') lis: QueryList<ElementRef>;
+    lcount: number = 0;
+
+    ngAfterViewChecked(){
+        setTimeout(()=>{this.lcount = this.lis.length}, 0);
+    }
+
+    //end access to multiple template elements
+
     //access to templates elements
 
     @ViewChild(PlantDetailComponent) detail: PlantDetailComponent;
